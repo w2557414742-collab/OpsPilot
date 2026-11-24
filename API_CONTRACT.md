@@ -1,4 +1,4 @@
-# Phase 1 HTTP 契约
+# OpsPilot HTTP 契约
 
 Java 公共接口使用 /api/v1。除登录外都使用 Bearer JWT，列表最多 100 行。
 
@@ -31,3 +31,5 @@ Python 内部接口前缀为 /internal/v1/tenants/{tenant}/runs/{run_id}，使�
 result 在 SUCCEEDED 时包含 provider、conclusion、evidence 和 nextChecks。Phase 1 的证据数组为空，结论为 INSUFFICIENT_EVIDENCE。
 
 Phase 2 的告警来源认证、事件负载和证据查询见 [告警接口](docs/alerts.md)。
+
+公开接口与 Agent 的版本、队列和存储之间的完整上下游关系见 [调用图](CALL_FLOW.md)。Python 的入口由 Pydantic 模型定义，Java API 的参数及方法签名见 [Java 方法参考](METHOD_REFERENCE.md)。

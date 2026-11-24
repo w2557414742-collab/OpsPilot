@@ -33,7 +33,7 @@ docker compose -p opspilot-phase1 stop mysql
 
 ## 手动启动服务
 
-如果需要交互调试，在数据库可用后配置以下变量，在同一个 PowerShell 中启动 Python 的后台作业，随后启动 Java 前台服务。
+数据库可用后配置以下变量，在同一个 PowerShell 中启动 Java 和 Python。配置变量与默认值见 [.env.example](.env.example)。
 
 ```powershell
 $env:OPSPILOT_JWT_KEY = [guid]::NewGuid().ToString('N') + [guid]::NewGuid().ToString('N')
@@ -43,18 +43,9 @@ $env:OPSPILOT_BOOTSTRAP_USER = 'admin'
 $env:OPSPILOT_BOOTSTRAP_PASSWORD = [guid]::NewGuid().ToString('N')
 $env:OPSPILOT_AGENT_DB = '.local/agent.sqlite3'
 $env:OPSPILOT_PROVIDER = 'DETERMINISTIC_TEST'
-$env:PYTHONPATH = (Resolve-Path 'agent-python/src').Path
-$agentJob = Start-Job -ScriptBlock {
-    Set-Location $using:PWD
-    & .local/venv/Scripts/python.exe -m uvicorn opspilot_agent.api:from_env --factory --host 127.0.0.1 --port 8000
-}
-try {
-    java -jar backend-java/ops-bootstrap/target/ops-bootstrap-0.1.0-SNAPSHOT.jar
-} finally {
-    Stop-Job $agentJob
-    Receive-Job $agentJob
-    Remove-Job $agentJob
-}
+& ./scripts/start-local.ps1
 ```
 
 首次启动会插入管理员。重新启动时，已有账号保留原密码。公共 API 的路径及表单见 [HTTP 契约](API_CONTRACT.md)。
+
+脚本让 Java 前台运行，Python 使用受脚本管理的后台作业。按 Ctrl+C 退出应用，再使用启动时的 Compose 参数停止数据库。Linux 用法见 [Linux 指南](docs/linux-quickstart.md)。

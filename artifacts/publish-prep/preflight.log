@@ -1,0 +1,15 @@
+git version 2.51.0.windows.1
+Git object integrity check passed
+gh version 2.105.0 (2026-11-17)
+https://github.com/cli/cli/releases/tag/v2.105.0
+8.30.1
+PowerShell launcher parsed
+Bash launcher parsed
+Validated 485 local documentation links and source anchors
+Workflow YAML parsed with 4 pinned actions; remote status NOT_RUN
+2026-11-24T21:41:39.309+08:00  INFO 10724 --- [           main] dev.opspilot.OpsPilot                    : Started OpsPilot in 4.357 seconds (process running for 4.763)
+Scanning 106 publication paths and 105 local Git blobs
+current-candidate: Gitleaks exit 0
+all-local-blobs: Gitleaks exit 0
+history-all-refs: Gitleaks exit 0
+Supplemental scan: 106 working tree candidates, 105 local Git blobs, 0 indicators

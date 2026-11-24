@@ -1,0 +1,154 @@
+OpsPilot/
+├── .github/
+│   └── workflows/
+│       └── verify.yml
+├── agent-python/
+│   ├── src/
+│   │   └── opspilot_agent/
+│   │       ├── __init__.py
+│   │       ├── api.py
+│   │       ├── models.py
+│   │       ├── providers.py
+│   │       └── store.py
+│   ├── tests/
+│   │   └── test_runs.py
+│   ├── pyproject.toml
+│   └── requirements.lock
+├── artifacts/
+│   ├── phase1/
+│   │   ├── README.md
+│   │   ├── end-to-end.log
+│   │   ├── environment.log
+│   │   ├── java-build.log
+│   │   ├── java-restart.log
+│   │   ├── java.log
+│   │   ├── python-restart.log
+│   │   ├── python-tests.log
+│   │   ├── python.log
+│   │   └── snapshot.json
+│   ├── phase2/
+│   │   ├── README.md
+│   │   ├── compose-default-pool-failure.log
+│   │   ├── compose.log
+│   │   ├── end-to-end.log
+│   │   ├── fresh-schema-java.log
+│   │   ├── fresh-schema-verification.log
+│   │   ├── java-build.log
+│   │   ├── java-restart.log
+│   │   ├── java.log
+│   │   ├── phase1-regression.log
+│   │   └── snapshot.json
+│   └── publish-prep/
+│       ├── README.md
+│       ├── java-tests.log
+│       ├── preflight.log
+│       └── python-tests.log
+├── backend-java/
+│   ├── ops-bootstrap/
+│   │   ├── src/
+│   │   │   └── main/
+│   │   │       ├── java/
+│   │   │       │   └── dev/
+│   │   │       │       └── opspilot/
+│   │   │       │           ├── alert/
+│   │   │       │           │   ├── AlertApi.java
+│   │   │       │           │   ├── AlertCache.java
+│   │   │       │           │   ├── AlertFingerprint.java
+│   │   │       │           │   ├── AlertIngestion.java
+│   │   │       │           │   ├── AlertModels.java
+│   │   │       │           │   ├── AlertNormalization.java
+│   │   │       │           │   └── AlertStore.java
+│   │   │       │           ├── api/
+│   │   │       │           │   ├── ApiFailure.java
+│   │   │       │           │   └── OperationsApi.java
+│   │   │       │           ├── auth/
+│   │   │       │           │   └── Auth.java
+│   │   │       │           ├── incident/
+│   │   │       │           │   └── IncidentService.java
+│   │   │       │           ├── store/
+│   │   │       │           │   ├── OpsStore.java
+│   │   │       │           │   └── Rows.java
+│   │   │       │           ├── task/
+│   │   │       │           │   ├── AgentClient.java
+│   │   │       │           │   └── TaskWorker.java
+│   │   │       │           └── OpsPilot.java
+│   │   │       └── resources/
+│   │   │           ├── db/
+│   │   │           │   └── migration/
+│   │   │           │       ├── V1__core.sql
+│   │   │           │       └── V2__alert_ingestion.sql
+│   │   │           └── application.yml
+│   │   └── pom.xml
+│   ├── ops-domain/
+│   │   ├── src/
+│   │   │   ├── main/
+│   │   │   │   └── java/
+│   │   │   │       └── dev/
+│   │   │   │           └── opspilot/
+│   │   │   │               └── domain/
+│   │   │   │                   ├── IncidentStatus.java
+│   │   │   │                   └── TaskStatus.java
+│   │   │   └── test/
+│   │   │       └── java/
+│   │   │           └── dev/
+│   │   │               └── opspilot/
+│   │   │                   └── domain/
+│   │   │                       └── IncidentStatusTest.java
+│   │   └── pom.xml
+│   └── pom.xml
+├── docs/
+│   ├── adr/
+│   │   ├── 0001-module-and-storage-boundary.md
+│   │   ├── 0002-diagnosis-result-and-cancellation.md
+│   │   └── 0003-alert-store-and-event-time.md
+│   ├── learning/
+│   │   ├── agent/
+│   │   │   └── phase1.md
+│   │   ├── integration/
+│   │   │   └── phase1.md
+│   │   └── java/
+│   │       └── phase1.md
+│   ├── research/
+│   │   ├── phase1-versions.md
+│   │   └── related_work.md
+│   ├── alerts.md
+│   └── linux-quickstart.md
+├── infra/
+│   └── compose.ipam.yaml
+├── scripts/
+│   ├── start-local.ps1
+│   ├── start-local.sh
+│   ├── verify_phase1.py
+│   └── verify_phase2.py
+├── .env.example
+├── .gitattributes
+├── .gitignore
+├── AGENTS.md
+├── AGENT_TASK_ENGINE.md
+├── API_CONTRACT.md
+├── ARCHITECTURE.md
+├── CALL_FLOW.md
+├── CHANGELOG.md
+├── CHATGPT_HANDOFF.md
+├── DATABASE_DESIGN.md
+├── DEMO_GUIDE.md
+├── DEVELOPMENT_PLAN.md
+├── FILE_GUIDE.md
+├── FUNCTION_REFERENCE.md
+├── GITHUB_PUBLISH_REPORT.md
+├── INCIDENT_STATE_MACHINE.md
+├── INTERVIEW_GUIDE.md
+├── LICENSE
+├── METHOD_REFERENCE.md
+├── PACKAGE_AUDIT.md
+├── PROJECT_STATUS.md
+├── PROJECT_STRUCTURE.md
+├── PROJECT_TREE.txt
+├── README.en.md
+├── README.md
+├── SECURITY_AUDIT.md
+├── TEST_REPORT.md
+├── THIRD_PARTY_NOTICES.md
+├── VERIFIED_RESUME_HIGHLIGHTS.md
+├── WINDOWS_QUICKSTART.md
+└── compose.yaml

@@ -19,3 +19,7 @@
 | Phase 10 完整安全审计及求职交付 | NOT_IMPLEMENTED | 已归档 Phase 1 至 Phase 2 源码阅读、面试及阶段性安全核验 |
 
 已验证的告警并发用例用于检查业务不变量。QPS、延迟分位数与长期容量均为 NOT_RUN。
+
+## GitHub 发布准备
+
+原有 Phase 0–2 历史、源码与验收证据已保留。工作区忽略规则、容量审计、源码交接、双平台启动脚本及 GitHub Actions 配置已整理。GitHub Actions 为 NOT_RUN。远程创建与推送等待 GitHub 登录及用户确认，见 [发布报告](GITHUB_PUBLISH_REPORT.md)。

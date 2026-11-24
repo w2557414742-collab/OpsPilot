@@ -22,3 +22,5 @@ Flyway 执行 V1__core.sql。Java 工单写入、状态转换、诊断创建及�
 Java 的时钟判断使用数据库当前时间，Python 租约使用本机 Epoch 秒。
 
 Flyway 的 V2 追加告警表。告警事务按分组固定顺序取锁，在当前已提交读隔离级别滚动计数。接收回执、证据、事件和候选一起提交。Redis 投影在事务提交后尝试写入。
+
+迁移与运行态规范以 [V1 SQL](backend-java/ops-bootstrap/src/main/resources/db/migration/V1__core.sql)、[V2 SQL](backend-java/ops-bootstrap/src/main/resources/db/migration/V2__alert_ingestion.sql) 和 [SQLite Store](agent-python/src/opspilot_agent/store.py) 为准。数据库卷、运行中的 SQLite 文件及其 WAL 保留在本机。

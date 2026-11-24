@@ -31,3 +31,7 @@ pytest 发出 Starlette TestClient 使用旧 anyio 接口的弃用提示。未�
 Flyway 对 MySQL 8.4 输出兼容性警告。本项目在实际 8.4.8 实例上验证了 V1 建库、V2 增量迁移、空库应用两次迁移和重启后校验。[空库迁移日志](artifacts/phase2/fresh-schema-java.log)
 
 本机 Docker 默认地址池已耗尽。为验收项目单独配置私有子网后，Compose 中的 MySQL 和 Redis 均通过健康检查。[首次启动日志](artifacts/phase2/compose-default-pool-failure.log) · [独立子网启动与停止日志](artifacts/phase2/compose.log)
+
+## GitHub 发布准备复测
+
+本地 JDK 21 构建成功，2 项 JUnit 和 4 项 pytest 通过。实际在 Windows 使用新脚本启动 Java 和 Python 并连接本机 MySQL，两个健康接口返回正常。结束本轮测试的 Java 子进程后，两个监听端口均关闭。Bash 脚本通过语法检查，原生 Linux 启动为 NOT_RUN。GitHub Actions 完成 YAML 与固定 Action SHA 检查，远程运行状态为 NOT_RUN。[发布复测证据](artifacts/publish-prep/README.md)
