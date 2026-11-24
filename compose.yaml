@@ -1,0 +1,22 @@
+name: opspilot
+services:
+  mysql:
+    image: mysql:8.4.8@sha256:2952e3be7807f06fc18de50b3ea1a632d5c70d63482ff7d7376fe3aa8999babf
+    environment:
+      MYSQL_DATABASE: opspilot
+      MYSQL_USER: opspilot
+      MYSQL_PASSWORD: ${OPSPILOT_DB_PASSWORD:?Set OPSPILOT_DB_PASSWORD}
+      MYSQL_RANDOM_ROOT_PASSWORD: "yes"
+    ports:
+      - "127.0.0.1:${OPSPILOT_DB_PORT:-13316}:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    mem_limit: 768m
+    cpus: 2.0
+    healthcheck:
+      test: ["CMD-SHELL", "MYSQL_PWD=$${MYSQL_PASSWORD} mysql -h 127.0.0.1 -u opspilot opspilot -Nse 'SELECT 1'"]
+      interval: 3s
+      timeout: 3s
+      retries: 30
+volumes:
+  mysql-data:

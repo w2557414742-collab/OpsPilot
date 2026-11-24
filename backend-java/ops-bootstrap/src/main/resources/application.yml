@@ -1,0 +1,34 @@
+server:
+  address: ${SERVER_ADDRESS:127.0.0.1}
+  port: ${SERVER_PORT:8080}
+  error:
+    include-message: never
+spring:
+  datasource:
+    url: ${OPSPILOT_DB_URL}
+    username: ${OPSPILOT_DB_USER}
+    password: ${OPSPILOT_DB_PASSWORD}
+  flyway:
+    enabled: true
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: true
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+    arg-name-based-constructor-auto-mapping: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,prometheus
+opspilot:
+  auth:
+    jwt-key: ${OPSPILOT_JWT_KEY}
+    bootstrap-tenant: ${OPSPILOT_BOOTSTRAP_TENANT:}
+    bootstrap-user: ${OPSPILOT_BOOTSTRAP_USER:}
+    bootstrap-password: ${OPSPILOT_BOOTSTRAP_PASSWORD:}
+  agent:
+    url: ${OPSPILOT_AGENT_URL:http://127.0.0.1:8000}
+    token: ${OPSPILOT_AGENT_TOKEN}
+    tick-ms: ${OPSPILOT_TASK_TICK_MS:500}

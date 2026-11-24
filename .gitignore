@@ -1,0 +1,12 @@
+.local/
+.env
+.venv/
+target/
+__pycache__/
+.pytest_cache/
+*.egg-info/
+*.sqlite3*
+.cache/
+artifacts/**/runtime/
+*.log
+!artifacts/**/*.log
