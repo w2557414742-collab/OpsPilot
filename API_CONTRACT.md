@@ -29,3 +29,5 @@ Python 内部接口前缀为 /internal/v1/tenants/{tenant}/runs/{run_id}，使�
 | GET /events | after 默认 0 | 200，id、status、at 列表 |
 
 result 在 SUCCEEDED 时包含 provider、conclusion、evidence 和 nextChecks。Phase 1 的证据数组为空，结论为 INSUFFICIENT_EVIDENCE。
+
+Phase 2 的告警来源认证、事件负载和证据查询见 [告警接口](docs/alerts.md)。

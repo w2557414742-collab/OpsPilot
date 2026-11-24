@@ -4,6 +4,12 @@ server:
   error:
     include-message: never
 spring:
+  data:
+    redis:
+      host: ${OPSPILOT_REDIS_HOST:127.0.0.1}
+      port: ${OPSPILOT_REDIS_PORT:16379}
+      connect-timeout: 300ms
+      timeout: 300ms
   datasource:
     url: ${OPSPILOT_DB_URL}
     username: ${OPSPILOT_DB_USER}
@@ -18,11 +24,19 @@ mybatis:
     map-underscore-to-camel-case: true
     arg-name-based-constructor-auto-mapping: true
 management:
+  health:
+    redis:
+      enabled: false
   endpoints:
     web:
       exposure:
         include: health,prometheus
 opspilot:
+  alert:
+    tenant: ${OPSPILOT_ALERT_TENANT:}
+    source: ${OPSPILOT_ALERT_SOURCE:}
+    token: ${OPSPILOT_ALERT_TOKEN:}
+    redis-enabled: ${OPSPILOT_ALERT_REDIS_ENABLED:false}
   auth:
     jwt-key: ${OPSPILOT_JWT_KEY}
     bootstrap-tenant: ${OPSPILOT_BOOTSTRAP_TENANT:}

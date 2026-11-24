@@ -1,4 +1,4 @@
-# Phase 1 源码阅读入口
+# Phase 1 与 Phase 2 源码阅读入口
 
 | 文件 | 阅读重点 |
 | --- | --- |
@@ -11,3 +11,5 @@
 | agent-python/src/opspilot_agent/store.py | 幂等 run、事件检索、取消和运行租约 |
 | agent-python/src/opspilot_agent/providers.py | 确定性和外部 provider 的边界 |
 | scripts/verify_phase1.py | 手动重复请求、注入丢响应、验证业务不变量 |
+| backend-java/ops-bootstrap/src/main/java/dev/opspilot/alert/AlertIngestion.java | 回执事务、事件时间窗口及候选冷却 |
+| backend-java/ops-bootstrap/src/main/java/dev/opspilot/alert/AlertCache.java | Lua 执行及提交后投影 |

@@ -8,3 +8,6 @@
 | IncidentService.cancel | tenant、actor 和 task UUID，返回 Task | 先锁工单再锁任务。取消使现任租约失效 |
 | TaskWorker.tick | 无外部参数，推进一项数据库队列任务 | 到期租约可重领。HTTP 失败延迟复查 |
 | TaskWorker.finish | 当前租约任务、状态及结果，更新事务 | 用租约和工单版本屏蔽已失租或旧运行的写入 |
+| AlertIngestion.accept | 已认证租户和来源、原始请求、归一化事件，返回回执与投影计划 | 单事务保存回执与计数，组锁加 READ COMMITTED 保证淘汰查询看到前次提交 |
+| AlertIngestion.advance | 分组、事件、水位，写聚合计数并在触发时保存候选 | 按新淘汰区间扣除计数，冷却期内只增加抑制计数 |
+| AlertCache.project | 已提交的投影计划 | Lua 处理并发与乱序，Redis 错误由度量记录 |

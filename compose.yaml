@@ -18,5 +18,18 @@ services:
       interval: 3s
       timeout: 3s
       retries: 30
+  redis:
+    profiles: [alert-cache]
+    image: redis:7.4.8-alpine@sha256:7aec734b2bb298a1d769fd8729f13b8514a41bf90fcdd1f38ec52267fbaa8ee6
+    command: ["redis-server", "--save", "", "--appendonly", "no", "--maxmemory", "64mb", "--maxmemory-policy", "allkeys-lru"]
+    ports:
+      - "127.0.0.1:${OPSPILOT_REDIS_PORT:-16379}:6379"
+    mem_limit: 128m
+    cpus: 1.0
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 3s
+      timeout: 2s
+      retries: 10
 volumes:
   mysql-data:

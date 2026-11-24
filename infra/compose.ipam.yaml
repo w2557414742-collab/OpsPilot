@@ -1,0 +1,5 @@
+networks:
+  default:
+    ipam:
+      config:
+        - subnet: ${OPSPILOT_COMPOSE_SUBNET:?Choose a private subnet unused by local Docker networks}

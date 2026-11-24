@@ -27,6 +27,8 @@ docker compose -p opspilot-phase1 stop mysql
 
 脚本启动并回收自己的 Java 和 Python 进程，使用实际 MySQL 事务和 SQLite 文件。每次验证创建两个唯一租户。输出目录保留 Java 和 Uvicorn 原始日志及接口快照。复用同一项目的 MySQL 卷时使用先前的密码及原有端口。
 
+若 Docker 报告默认地址池耗尽，可选用一个与本机路由及 Docker 网络均无重叠的私有网段。设置 OPSPILOT_COMPOSE_SUBNET，并给每条 Compose 命令追加配置参数 `-f compose.yaml -f infra/compose.ipam.yaml`。
+
 ## 手动启动服务
 
 如果需要交互调试，在数据库可用后配置以下变量，在同一个 PowerShell 中启动 Python 的后台作业，随后启动 Java 前台服务。

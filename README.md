@@ -12,4 +12,4 @@
 - [任务引擎](AGENT_TASK_ENGINE.md)
 - [参考项目与版本](docs/research/related_work.md)
 
-当前 Compose 启动固定版本的 MySQL。Java 和 Python 使用独立的本地进程启动，诊断任务采用数据库队列。
+当前 Compose 启动固定版本的 MySQL，可按需启用 Redis 告警计数投影。Java 和 Python 使用独立的本地进程启动，诊断任务采用数据库队列。告警接入和原始证据的访问见 [告警设计与复现](docs/alerts.md)。
