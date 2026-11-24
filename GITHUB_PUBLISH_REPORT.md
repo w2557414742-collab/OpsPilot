@@ -4,6 +4,7 @@
 | --- | --- |
 | 本地分支 | `main` |
 | 原有历史 | 保留，整理前 HEAD 为 `44f5fb2ece09b45df8b0842ce94740675812055c` |
+| 发布候选源码与配置 | `d530c8a21c8507efca2fa63f0be6e6e21cd7f49b` |
 | GitHub CLI | 便携版 2.105.0，已按官方 SHA-256 校验 |
 | 登录 | BLOCKED，`gh auth status --hostname github.com` 返回未登录 |
 | 远程 URL、归属、可见性 | 待登录核对，目标为用户确认的 Private OpsPilot |
@@ -14,7 +15,7 @@
 | 本地发布安全检查 | 发布候选与历史通过。忽略目录内一条 JDK 配置命中已核实为误报。[安全核验](SECURITY_AUDIT.md) |
 | 已实现范围和源码学习 | [项目状态](PROJECT_STATUS.md) · [ChatGPT 交接](CHATGPT_HANDOFF.md) |
 
-本地工作区保留全部源码、测试、实验归档和现有 Git 提交。发布整理只修改项目归档、启动脚本和 CI 设置。最新本地提交使用 `git rev-parse HEAD` 获取，远程仓库 HEAD 须在推送后独立核对。
+本地工作区保留全部源码、测试、实验归档和现有 Git 提交。发布整理只修改项目归档、启动脚本和 CI 设置。报告记录的提交包含全部发布内容。最新本地提交使用 `git rev-parse HEAD` 获取，远程仓库 HEAD 须在推送后独立核对。
 
 ## 官方登录步骤
 

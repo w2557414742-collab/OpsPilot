@@ -98,9 +98,11 @@
 
 ## 内含的依赖和产物
 
-工作区的主要体积来自 .local 下的 JDK、MySQL 下载、Maven 缓存和 Python 虚拟环境。Maven target、Python 缓存和临时 SQLite 保留在本机。跟踪的 artifacts 只包含两轮测试的日志、接口快照和复现说明。
+工作区的主要体积来自 .local 下的 JDK、MySQL 下载、Maven 缓存和 Python 虚拟环境。Maven target、Python 缓存和临时 SQLite 保留在本机。跟踪的 artifacts 保存两阶段功能测试和本轮发布复测的日志、接口快照和复现说明。
 
 Git 已跟踪内容与历史中未发现需要移出索引的大型依赖。发布阶段保留既有提交和本机文件。
+
+发布整理提交 `d530c8a21c8507efca2fa63f0be6e6e21cd7f49b` 有 106 个跟踪文件，逻辑总计 349,676 B，最大文件为 59,811 B 的 Java 方法参考。原有应用源码、数据库配置、验收脚本和 Phase 1、Phase 2 工件经 Git diff 核对无差异。[GitHub 文件大小说明](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github)
 
 ## 复核命令
 

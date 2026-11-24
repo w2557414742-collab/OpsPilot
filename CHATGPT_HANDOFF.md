@@ -6,6 +6,7 @@
 | GitHub | 待用户完成 GitHub 登录并确认目标，当前无远程地址 |
 | 当前分支 | `main` |
 | 最新业务验收归档 SHA | `44f5fb2ece09b45df8b0842ce94740675812055c` |
+| 源码审查与发布候选 SHA | `d530c8a21c8507efca2fa63f0be6e6e21cd7f49b` |
 | 最新归档提交 | 在实际仓库执行 `git rev-parse HEAD`。发布整理提交见 [发布报告](GITHUB_PUBLISH_REPORT.md) |
 
 ## 从这里读源码
