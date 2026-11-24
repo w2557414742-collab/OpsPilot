@@ -3,11 +3,12 @@
 | 字段 | 当前值 |
 | --- | --- |
 | 项目 | OpsPilot |
-| GitHub | 待用户完成 GitHub 登录并确认目标，当前无远程地址 |
+| GitHub | [w2557414742-collab/OpsPilot](https://github.com/w2557414742-collab/OpsPilot)，Private |
 | 当前分支 | `main` |
 | 最新业务验收归档 SHA | `44f5fb2ece09b45df8b0842ce94740675812055c` |
 | 源码审查与发布候选 SHA | `d530c8a21c8507efca2fa63f0be6e6e21cd7f49b` |
-| 最新归档提交 | 在实际仓库执行 `git rev-parse HEAD`。发布整理提交见 [发布报告](GITHUB_PUBLISH_REPORT.md) |
+| 首次远程发布 SHA | `4559a2f8e5033f3178e9707e35592aedf9167ac2` |
+| 最新归档提交 | [远程 main](https://github.com/w2557414742-collab/OpsPilot/commits/main/) · [发布报告](GITHUB_PUBLISH_REPORT.md) |
 
 ## 从这里读源码
 
@@ -28,5 +29,5 @@ Java 使用 Spring Boot、JWT、MyBatis 与 MySQL 管理账号、资产、工单
 ## 尚待实现或执行
 
 - RocketMQ 与 Outbox/Inbox、真实遥测、LangGraph、MCP、RCA 排序、审批恢复和 Vue 为 NOT_IMPLEMENTED。
-- 性能 Benchmark、RCA 精度、真实模型与 GitHub Actions 为 NOT_RUN。
+- 性能 Benchmark、RCA 精度与真实模型为 NOT_RUN。远程 CI 结果见 [发布报告](GITHUB_PUBLISH_REPORT.md)。
 - Phase 3 计划先引入 RocketMQ 与事务型 Outbox/Inbox，再测试发布与消费崩溃窗口。以 [开发计划](DEVELOPMENT_PLAN.md) 和实际提交为准。

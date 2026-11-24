@@ -1,41 +1,34 @@
 # OpsPilot GitHub 发布报告
 
-| 验收项 | 本轮结果 |
+发布日为 2026-11-24（北京时间）。
+
+| 验收项 | 结果 |
 | --- | --- |
-| 本地分支 | `main` |
-| 原有历史 | 保留，整理前 HEAD 为 `44f5fb2ece09b45df8b0842ce94740675812055c` |
-| 发布候选源码与配置 | `d530c8a21c8507efca2fa63f0be6e6e21cd7f49b` |
-| GitHub CLI | 便携版 2.105.0，已按官方 SHA-256 校验 |
-| 登录 | BLOCKED，`gh auth status --hostname github.com` 返回未登录 |
-| 远程 URL、归属、可见性 | 待登录核对，目标为用户确认的 Private OpsPilot |
-| Git 远程、远程分支和 SHA | 未配置、未推送。计划从本地 `main` 推送 |
-| 远程文件、README 显示及大文件 | NOT_RUN |
-| GitHub Actions | NOT_RUN，工作流已加入项目 |
-| 本地大小和历史检查 | [容量审计](PACKAGE_AUDIT.md) |
-| 本地发布安全检查 | 发布候选与历史通过。忽略目录内一条 JDK 配置命中已核实为误报。[安全核验](SECURITY_AUDIT.md) |
-| 已实现范围和源码学习 | [项目状态](PROJECT_STATUS.md) · [ChatGPT 交接](CHATGPT_HANDOFF.md) |
+| GitHub 仓库 | [w2557414742-collab/OpsPilot](https://github.com/w2557414742-collab/OpsPilot) |
+| 归属与权限 | `w2557414742-collab`，发布时已核实 ADMIN 和 push 权限 |
+| 可见性与分支 | Private，默认分支及推送分支均为 `main` |
+| 同名库检查 | 已认证的查询返回 HTTP 404。创建后重新确认可见性、身份和空仓库状态 |
+| Git 远程 | `origin` 指向 `https://github.com/w2557414742-collab/OpsPilot.git`，本地 `main` 跟踪 `origin/main` |
+| 首次发布提交 | [4559a2f8e5033f3178e9707e35592aedf9167ac2](https://github.com/w2557414742-collab/OpsPilot/commit/4559a2f8e5033f3178e9707e35592aedf9167ac2)，本地 HEAD、Git 远程 ref 与 GitHub API 一致 |
+| 文件完整性 | 比对 GitHub 递归树的全部 106 个文件路径、模式与对象 SHA。树 SHA 为 `014396dbd4775a51fa7bc6bf2d1dde9090f0173b`，最大 blob 为 59,811 B |
+| README | GitHub 返回的 README blob 与本地一致，并成功返回渲染后的 HTML |
+| 密钥与大文件 | 首次推送前扫描 5 个提交、141 个本地 Git blob 与 106 个文件。0 个凭证命中，0 个达到 50 MiB 的历史 blob。[安全核验](SECURITY_AUDIT.md) · [容量审计](PACKAGE_AUDIT.md) |
+| 首次推送 Actions | [Verify OpsPilot #45419789126](https://github.com/w2557414742-collab/OpsPilot/actions/runs/45419789126) 于北京时间 22:59:13 完成，结论为 `success` |
+| 当前发布记录 | [main 提交](https://github.com/w2557414742-collab/OpsPilot/commits/main/) · [main 的 Actions](https://github.com/w2557414742-collab/OpsPilot/actions/workflows/verify.yml?query=branch%3Amain) |
 
-本地工作区保留全部源码、测试、实验归档和现有 Git 提交。发布整理只修改项目归档、启动脚本和 CI 设置。报告记录的提交包含全部发布内容。最新本地提交使用 `git rev-parse HEAD` 获取，远程仓库 HEAD 须在推送后独立核对。
+## 发布与复核记录
 
-## 官方登录步骤
+首次推送保留了原有 5 个提交。GitHub API 走已验证的直连。Git HTTPS 推送及 ref 核对使用本机代理、CLI 钥匙串凭据和有效的 TLS 校验。连接参数只作用于发布进程。
 
-工作区已提供校验过的 Windows 便携版。从仓库根目录在自己可见的 Windows PowerShell 中运行。
+首次 Actions 的 Java 构建与 JUnit、Python 依赖安装与 pytest、MySQL／Redis 端到端测试、验收工件上传及容器停止步骤均成功。
+
+首次推送后的记录以单独的文档提交归档。上表保存首次远程验收的固定 SHA。文档提交自己的 SHA 以 Git 的 `HEAD` 和远程 `main` 为准。
 
 ```powershell
-$ghExe = (Resolve-Path '.local/release-tools/gh.exe').Path
-& $ghExe --version
-& $ghExe auth login --hostname github.com --web --git-protocol https
-& $ghExe auth status --hostname github.com
-& $ghExe api user --jq .login
+git rev-parse HEAD
+git ls-remote origin refs/heads/main
+gh repo view w2557414742-collab/OpsPilot --json nameWithOwner,visibility,defaultBranchRef,url
+gh run list --repo w2557414742-collab/OpsPilot --branch main --workflow verify.yml
 ```
 
-没有便携版时，可使用官方 Windows 安装程序；存在 WinGet 时可执行 `winget install --id GitHub.cli --source winget`。登录后只需告知账号或组织名与创建、推送授权。[官方 Windows 安装](https://github.com/cli/cli/blob/trunk/docs/install_windows.md) · [官方登录说明](https://cli.github.com/manual/gh_auth_login)
-
-## 登录和明确授权后的发布验收
-
-1. 用 `gh api user --jq .login` 确认账号。用 `gh repo view OWNER/OpsPilot --json nameWithOwner,visibility,defaultBranchRef,url,isEmpty` 核对同名仓库。将权限错误与仓库不存在区分。
-2. 用户确认创建且同名库不存在时，执行 `gh repo create OWNER/OpsPilot --private`。重新核对归属与可见性。已有同名库先比较默认分支、远程分支与历史。若历史分叉则暂停。
-3. 审计待推送提交、核对远程与分支后，仅在本地尚无 origin 时执行 `git remote add origin https://github.com/OWNER/OpsPilot.git`。可用 `gh auth setup-git --hostname github.com` 配置 Git 凭据助手，再执行 `git push -u origin main`。
-4. 用 `git ls-remote origin refs/heads/main` 对比本地 HEAD。通过 GitHub API 核查树和 README，通过 `gh run list --repo OWNER/OpsPilot --branch main` 检查 CI。根据真实结果更新本报告及交接文件。
-
-GitHub 凭据通过官方登录流程存储，勿将令牌粘贴到文档、命令参数或聊天。
+项目能力、已知问题与后续阶段见 [项目状态](PROJECT_STATUS.md) 和 [ChatGPT 交接](CHATGPT_HANDOFF.md)。

@@ -1,5 +1,10 @@
 # 更新记录
 
+## GitHub 正式发布 · 2026-11-24
+
+- 创建私有仓库 `w2557414742-collab/OpsPilot` 并推送 `main`，保留原始 Git 历史。
+- 核对远程分支、完整 Git 树、README 和 Actions，结果归档到 [发布报告](GITHUB_PUBLISH_REPORT.md)。
+
 ## GitHub 发布准备 · 2026-11-24
 
 - 保留 Phase 0–2 的原有提交、源码、测试和验收证据。

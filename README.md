@@ -47,7 +47,7 @@ python -m pytest agent-python
 | 项目 | 状态 |
 | --- | --- |
 | Phase 1、Phase 2 功能验收 | VERIFIED |
-| GitHub Actions | NOT_RUN，待首次远程执行 |
+| GitHub Actions | [远程运行及发布验收](GITHUB_PUBLISH_REPORT.md) |
 | QPS、延迟分位数、压力与容量 | NOT_RUN |
 | RCA 准确率、Agent 成本、真实模型调用 | NOT_RUN |
 | Vue 工作台与界面截图 | NOT_IMPLEMENTED |

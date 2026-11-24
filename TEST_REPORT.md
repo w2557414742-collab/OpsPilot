@@ -34,4 +34,4 @@ Flyway 对 MySQL 8.4 输出兼容性警告。本项目在实际 8.4.8 实例上�
 
 ## GitHub 发布准备复测
 
-本地 JDK 21 构建成功，2 项 JUnit 和 4 项 pytest 通过。实际在 Windows 使用新脚本启动 Java 和 Python 并连接本机 MySQL，两个健康接口返回正常。结束本轮测试的 Java 子进程后，两个监听端口均关闭。Bash 脚本通过语法检查，原生 Linux 启动为 NOT_RUN。GitHub Actions 完成 YAML 与固定 Action SHA 检查，远程运行状态为 NOT_RUN。[发布复测证据](artifacts/publish-prep/README.md)
+本地 JDK 21 构建成功，2 项 JUnit 和 4 项 pytest 通过。实际在 Windows 使用新脚本启动 Java 和 Python 并连接本机 MySQL，两个健康接口返回正常。结束本轮测试的 Java 子进程后，两个监听端口均关闭。Bash 脚本通过语法检查，原生 Linux 启动为 NOT_RUN。GitHub Actions 完成 YAML 与固定 Action SHA 检查。正式远程运行结果见 [发布报告](GITHUB_PUBLISH_REPORT.md)，本地结果见 [发布复测证据](artifacts/publish-prep/README.md)。
