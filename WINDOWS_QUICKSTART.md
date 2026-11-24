@@ -2,6 +2,8 @@
 
 使用 Windows PowerShell 7 或 PowerShell 5.1 发出下列命令。需要 JDK 21、Maven 3.9、Python 3.13 和运行中的 Docker Desktop Linux 引擎。用 mvn -version 确认 Maven 已读取 Java 21 的 JAVA_HOME。
 
+本次验收在工作区使用 Microsoft OpenJDK 21.0.9+10。若沿用该本地安装，在当前终端执行 `$env:JAVA_HOME = (Resolve-Path '.local/jdk-21.0.9+10').Path` 和 `$env:Path = "$env:JAVA_HOME/bin;$env:Path"`。
+
 ## 构建与测试
 
 ```powershell
@@ -27,7 +29,7 @@ docker compose -p opspilot-phase1 stop mysql
 
 脚本启动并回收自己的 Java 和 Python 进程，使用实际 MySQL 事务和 SQLite 文件。每次验证创建两个唯一租户。输出目录保留 Java 和 Uvicorn 原始日志及接口快照。复用同一项目的 MySQL 卷时使用先前的密码及原有端口。
 
-若 Docker 报告默认地址池耗尽，可选用一个与本机路由及 Docker 网络均无重叠的私有网段。设置 OPSPILOT_COMPOSE_SUBNET，并给每条 Compose 命令追加配置参数 `-f compose.yaml -f infra/compose.ipam.yaml`。
+若 Docker 报告默认地址池耗尽，可选用一个与本机路由及 Docker 网络均无重叠的私有网段。设置 OPSPILOT_COMPOSE_SUBNET，并在 Compose 子命令前传入配置参数 `-f compose.yaml -f infra/compose.ipam.yaml`。
 
 ## 手动启动服务
 

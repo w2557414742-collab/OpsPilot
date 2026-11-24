@@ -26,8 +26,8 @@ pytest 发出 Starlette TestClient 使用旧 anyio 接口的弃用提示。未�
 - Alertmanager v4 封装按状态解析，重复的 FIRING 通知复用事件 UUID。原始字节可比对，跨租户下载返回 404。
 - Java 重启并指向无法连接的 Redis 后，仍成功接收事件，MySQL 计数再增加一条，Micrometer 记录一次缓存投影失败。Phase 1 全链路回归通过。
 
-原始 [端到端日志](artifacts/phase2/end-to-end.log)、[接口快照](artifacts/phase2/snapshot.json) 和 [Phase 1 回归](artifacts/phase2/phase1-regression.log) 已归档。本轮使用 Alertmanager v4 请求夹具通过真实 HTTP 验收，Alertmanager 进程联调与高负载性能测试为 NOT_RUN。
+原始 [端到端日志](artifacts/phase2/end-to-end.log)、[接口快照](artifacts/phase2/snapshot.json) 和 [Phase 1 回归](artifacts/phase2/phase1-regression.log) 已归档。本轮使用 Alertmanager v4 请求夹具通过真实 HTTP 验收，Alertmanager 进程联调与高负载性能测试为 NOT_RUN。提交与命令见 [Phase 2 归档说明](artifacts/phase2/README.md)。
 
-Flyway 对 MySQL 8.4 输出兼容性警告。本项目在实际 8.4.8 实例上验证了 V1 建库、V2 增量迁移和重启后校验。[Phase 2 Java 原始日志](artifacts/phase2/java.log)
+Flyway 对 MySQL 8.4 输出兼容性警告。本项目在实际 8.4.8 实例上验证了 V1 建库、V2 增量迁移、空库应用两次迁移和重启后校验。[空库迁移日志](artifacts/phase2/fresh-schema-java.log)
 
 本机 Docker 默认地址池已耗尽。为验收项目单独配置私有子网后，Compose 中的 MySQL 和 Redis 均通过健康检查。[首次启动日志](artifacts/phase2/compose-default-pool-failure.log) · [独立子网启动与停止日志](artifacts/phase2/compose.log)

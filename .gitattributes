@@ -1,1 +1,2 @@
 artifacts/**/*.log -text -diff
+artifacts/**/*.json text eol=lf

@@ -1,0 +1,118 @@
+{
+  "incident": {
+    "id": "965cdac4-5081-45a0-b5a4-874eb9d583c9",
+    "serviceId": "document-service",
+    "title": "Drop response case",
+    "description": "HTTP recovery fixture",
+    "status": "MANUAL_REVIEW",
+    "version": 3,
+    "createdAt": "2026-11-24T10:13:22.402904"
+  },
+  "replayedTask": {
+    "id": "47b4cfdf-3cc4-4f11-8685-1ea72a5a8c0a",
+    "incidentId": "965cdac4-5081-45a0-b5a4-874eb9d583c9",
+    "traceId": "3bfb43ac8e46469e9636f3705979fd02",
+    "status": "SUCCEEDED",
+    "runId": "47b4cfdf-3cc4-4f11-8685-1ea72a5a8c0a",
+    "attempt": 2,
+    "result": {
+      "evidence": [],
+      "provider": "DETERMINISTIC_TEST",
+      "conclusion": "INSUFFICIENT_EVIDENCE",
+      "nextChecks": [
+        "Check request rate, error rate and latency for document-service.",
+        "Inspect correlated abnormal logs and failed traces for document-service."
+      ]
+    },
+    "errorCode": null
+  },
+  "javaIncidentEvents": [
+    {
+      "id": 39,
+      "actor": "admin",
+      "eventType": "INCIDENT_CREATED",
+      "detail": "OPEN@0",
+      "createdAt": "2026-11-24T10:13:22.404691"
+    },
+    {
+      "id": 40,
+      "actor": "admin",
+      "eventType": "INCIDENT_TRANSITION",
+      "detail": "OPEN -> TRIAGING@1",
+      "createdAt": "2026-11-24T10:13:22.430986"
+    },
+    {
+      "id": 41,
+      "actor": "admin",
+      "eventType": "INCIDENT_TRANSITION",
+      "detail": "TRIAGING -> DIAGNOSING@2",
+      "createdAt": "2026-11-24T10:13:22.482572"
+    },
+    {
+      "id": 42,
+      "actor": "admin",
+      "eventType": "TASK_QUEUED",
+      "detail": "47b4cfdf-3cc4-4f11-8685-1ea72a5a8c0a",
+      "createdAt": "2026-11-24T10:13:22.484897"
+    },
+    {
+      "id": 43,
+      "actor": "worker",
+      "eventType": "INCIDENT_TRANSITION",
+      "detail": "DIAGNOSING -> MANUAL_REVIEW@3",
+      "createdAt": "2026-11-24T10:13:23.382987"
+    },
+    {
+      "id": 44,
+      "actor": "worker",
+      "eventType": "TASK_SUCCEEDED",
+      "detail": "47b4cfdf-3cc4-4f11-8685-1ea72a5a8c0a",
+      "createdAt": "2026-11-24T10:13:23.384423"
+    }
+  ],
+  "pythonRunEvents": [
+    {
+      "id": 11,
+      "status": "QUEUED",
+      "at": 1795515202.6965744
+    },
+    {
+      "id": 12,
+      "status": "RUNNING",
+      "at": 1795515202.7973344
+    },
+    {
+      "id": 13,
+      "status": "SUCCEEDED",
+      "at": 1795515202.801188
+    }
+  ],
+  "cancelledTask": {
+    "id": "3179bc29-1ced-4df8-bf69-44a31fa55a27",
+    "incidentId": "2b7aec93-9c3a-489d-97c9-fff05fcaf6be",
+    "traceId": "622728801a82470b86e2ebabf81db654",
+    "status": "CANCELLED",
+    "runId": "3179bc29-1ced-4df8-bf69-44a31fa55a27",
+    "attempt": 2,
+    "result": null,
+    "errorCode": null
+  },
+  "recoveredTask": {
+    "id": "30262e69-bd1b-43a1-8cbf-0d4ffcdbd728",
+    "incidentId": "ed768309-9815-46ed-975a-04fba219d978",
+    "traceId": "02dc4a6ddda5450c9cc01e27e134e4b1",
+    "status": "SUCCEEDED",
+    "runId": "30262e69-bd1b-43a1-8cbf-0d4ffcdbd728",
+    "attempt": 4,
+    "result": {
+      "evidence": [],
+      "provider": "DETERMINISTIC_TEST",
+      "conclusion": "INSUFFICIENT_EVIDENCE",
+      "nextChecks": [
+        "Check request rate, error rate and latency for document-service.",
+        "Inspect correlated abnormal logs and failed traces for document-service."
+      ]
+    },
+    "errorCode": null
+  }
+}

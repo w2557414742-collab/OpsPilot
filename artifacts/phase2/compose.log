@@ -1,0 +1,23 @@
+ Network opspilot-compose-check_default  Creating
+ Network opspilot-compose-check_default  Created
+ Volume "opspilot-compose-check_mysql-data"  Creating
+ Volume "opspilot-compose-check_mysql-data"  Created
+ Container opspilot-compose-check-mysql-1  Creating
+ Container opspilot-compose-check-redis-1  Creating
+ Container opspilot-compose-check-redis-1  Created
+ Container opspilot-compose-check-mysql-1  Created
+ Container opspilot-compose-check-mysql-1  Starting
+ Container opspilot-compose-check-redis-1  Starting
+ Container opspilot-compose-check-mysql-1  Started
+ Container opspilot-compose-check-redis-1  Started
+ Container opspilot-compose-check-redis-1  Waiting
+ Container opspilot-compose-check-mysql-1  Waiting
+ Container opspilot-compose-check-redis-1  Healthy
+ Container opspilot-compose-check-mysql-1  Healthy
+NAME                             IMAGE                                                                                        COMMAND                  SERVICE   CREATED          STATUS                   PORTS
+opspilot-compose-check-mysql-1   mysql:8.4.8@sha256:2952e3be7807f06fc18de50b3ea1a632d5c70d63482ff7d7376fe3aa8999babf          "docker-entrypoint.s…"   mysql     10 seconds ago   Up 9 seconds (healthy)   127.0.0.1:23316->3306/tcp
+opspilot-compose-check-redis-1   redis:7.4.8-alpine@sha256:7aec734b2bb298a1d769fd8729f13b8514a41bf90fcdd1f38ec52267fbaa8ee6   "docker-entrypoint.s…"   redis     10 seconds ago   Up 9 seconds (healthy)   127.0.0.1:26379->6379/tcp
+ Container opspilot-compose-check-redis-1  Stopping
+ Container opspilot-compose-check-mysql-1  Stopping
+ Container opspilot-compose-check-redis-1  Stopped
+ Container opspilot-compose-check-mysql-1  Stopped

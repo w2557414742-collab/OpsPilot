@@ -1,0 +1,9 @@
+INFO:     Started server process [39192]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:53529 (Press CTRL+C to quit)
+INFO:     127.0.0.1:53659 - "PUT /internal/v1/tenants/phase1-3e95f81a91-a/runs/3179bc29-1ced-4df8-bf69-44a31fa55a27/cancel HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:53688 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53688 - "GET /internal/v1/tenants/phase1-3e95f81a91-a/runs/47b4cfdf-3cc4-4f11-8685-1ea72a5a8c0a/events HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53728 - "PUT /internal/v1/tenants/phase1-3e95f81a91-a/runs/30262e69-bd1b-43a1-8cbf-0d4ffcdbd728 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:53732 - "GET /internal/v1/tenants/phase1-3e95f81a91-a/runs/30262e69-bd1b-43a1-8cbf-0d4ffcdbd728 HTTP/1.1" 200 OK

@@ -16,6 +16,6 @@
 | Phase 7 RAG、审批、处置和恢复验证 | NOT_IMPLEMENTED | 待启动 |
 | Phase 8 Benchmark、性能与故障注入 | NOT_RUN | 当前实验只验证 Phase 1 功能 |
 | Phase 9 前端、完整 Compose profiles、SSE | NOT_IMPLEMENTED | 当前 Compose 启动 MySQL 与可选 Redis，均通过健康检查 |
-| Phase 10 完整安全审计及求职交付 | NOT_IMPLEMENTED | 当前学习资料覆盖 Phase 1 |
+| Phase 10 完整安全审计及求职交付 | NOT_IMPLEMENTED | 已归档 Phase 1 至 Phase 2 源码阅读、面试及阶段性安全核验 |
 
 已验证的告警并发用例用于检查业务不变量。QPS、延迟分位数与长期容量均为 NOT_RUN。

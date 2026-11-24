@@ -1,0 +1,3 @@
+ Network opspilot-compose-check_default  Creating
+ Network opspilot-compose-check_default  Error
+failed to create network opspilot-compose-check_default: Error response from daemon: all predefined address pools have been fully subnetted

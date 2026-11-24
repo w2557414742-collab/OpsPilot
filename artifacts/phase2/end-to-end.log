@@ -1,0 +1,3 @@
+PASS 8 concurrent replays yield one durable event, 10 distinct events aggregate, storm cooldown holds
+PASS Alertmanager v4 normalization, raw evidence, late archival and event-time eviction
+PASS durable restart, cross-tenant evidence denial, healthy ingest and recorded fallback with Redis unavailable

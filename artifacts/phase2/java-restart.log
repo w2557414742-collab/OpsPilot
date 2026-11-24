@@ -1,0 +1,34 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.16)
+
+2026-11-24T18:23:41.491+08:00  INFO 54220 --- [           main] dev.opspilot.OpsPilot                    : Starting OpsPilot v0.1.0-SNAPSHOT using Java 21.0.9 with PID 54220 (D:\ai-project\OpsPilot\backend-java\ops-bootstrap\target\ops-bootstrap-0.1.0-SNAPSHOT.jar started by Administrator in D:\ai-project\OpsPilot)
+2026-11-24T18:23:41.492+08:00  INFO 54220 --- [           main] dev.opspilot.OpsPilot                    : No active profile set, falling back to 1 default profile: "default"
+2026-11-24T18:23:42.294+08:00  INFO 54220 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-11-24T18:23:42.295+08:00  INFO 54220 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-11-24T18:23:42.309+08:00  INFO 54220 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2026-11-24T18:23:42.903+08:00  INFO 54220 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 54806 (http)
+2026-11-24T18:23:42.926+08:00  INFO 54220 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-24T18:23:42.926+08:00  INFO 54220 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-11-24T18:23:42.949+08:00  INFO 54220 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-11-24T18:23:42.950+08:00  INFO 54220 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1427 ms
+2026-11-24T18:23:43.360+08:00  INFO 54220 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-24T18:23:43.572+08:00  INFO 54220 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1f1fbc9f
+2026-11-24T18:23:43.576+08:00  INFO 54220 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-11-24T18:23:43.617+08:00  INFO 54220 --- [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://127.0.0.1:13316/opspilot (MySQL 8.4)
+2026-11-24T18:23:43.920+08:00  WARN 54220 --- [           main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: MySQL 8.4 is newer than this version of Flyway and support has not been tested. The latest supported version of MySQL is 8.1.
+2026-11-24T18:23:43.953+08:00  INFO 54220 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.021s)
+2026-11-24T18:23:43.964+08:00  INFO 54220 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema `opspilot`: 2
+2026-11-24T18:23:43.967+08:00  INFO 54220 --- [           main] o.f.core.internal.command.DbMigrate      : Schema `opspilot` is up to date. No migration necessary.
+2026-11-24T18:23:44.857+08:00  INFO 54220 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
+2026-11-24T18:23:45.191+08:00  INFO 54220 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 54806 (http) with context path '/'
+2026-11-24T18:23:45.202+08:00  INFO 54220 --- [           main] dev.opspilot.OpsPilot                    : Started OpsPilot in 4.021 seconds (process running for 4.414)
+2026-11-24T18:23:45.709+08:00  INFO 54220 --- [.1-54806-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-24T18:23:45.709+08:00  INFO 54220 --- [.1-54806-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-11-24T18:23:45.710+08:00  INFO 54220 --- [.1-54806-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms

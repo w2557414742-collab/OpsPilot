@@ -1,0 +1,64 @@
+{
+  "groupBeforeEviction": {
+    "id": "b18259f53dce5de54e816dd43e42073fc91a66a0f781fc9e10b48be02cd93f8c",
+    "serviceId": "documents",
+    "name": "TrafficErrors",
+    "watermarkMs": 1795515724915,
+    "infoCount": 0,
+    "warningCount": 13,
+    "criticalCount": 0,
+    "suppressedCount": 8,
+    "nextCandidateMs": 1795515844915
+  },
+  "groupAfterEviction": {
+    "id": "b18259f53dce5de54e816dd43e42073fc91a66a0f781fc9e10b48be02cd93f8c",
+    "serviceId": "documents",
+    "name": "TrafficErrors",
+    "watermarkMs": 1795515785915,
+    "infoCount": 0,
+    "warningCount": 1,
+    "criticalCount": 0,
+    "suppressedCount": 8,
+    "nextCandidateMs": 1795515844915
+  },
+  "groupWithRedisUnavailable": {
+    "id": "b18259f53dce5de54e816dd43e42073fc91a66a0f781fc9e10b48be02cd93f8c",
+    "serviceId": "documents",
+    "name": "TrafficErrors",
+    "watermarkMs": 1795515786915,
+    "infoCount": 0,
+    "warningCount": 2,
+    "criticalCount": 0,
+    "suppressedCount": 8,
+    "nextCandidateMs": 1795515844915
+  },
+  "originalReceipt": {
+    "receiptId": "39be28e9-b7bb-4d4e-ac2d-1451bc53e9fb",
+    "events": [
+      {
+        "ordinal": 0,
+        "eventId": "50f8d01c-12d3-459a-a2b0-795044696fa7",
+        "duplicateEvent": false,
+        "late": false
+      }
+    ]
+  },
+  "lastReceipt": {
+    "receiptId": "091e9543-bc48-43d5-88c1-d4330e3b7168",
+    "events": [
+      {
+        "ordinal": 0,
+        "eventId": "01516fdb-8176-4d94-8bf3-9d8373cdcfc8",
+        "duplicateEvent": false,
+        "late": false
+      }
+    ]
+  },
+  "firstCandidate": {
+    "id": "48ac1299-cfc6-4b0e-9f35-98ef29e0f2a0",
+    "groupId": "b18259f53dce5de54e816dd43e42073fc91a66a0f781fc9e10b48be02cd93f8c",
+    "eventId": "9d8111b9-2bf3-4e00-b396-519581881867",
+    "reason": "ALERT_STORM",
+    "watermarkMs": 1795515724915
+  }
+}

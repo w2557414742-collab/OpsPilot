@@ -1,0 +1,3 @@
+PASS MySQL optimistic concurrency, RBAC, stable submission replay, one Python execution
+PASS late diagnosis is retained while the newer incident state remains unchanged
+PASS Java business remains available during Agent outage, durable recovery, confirmed cancellation, tenant isolation
